@@ -39,3 +39,4 @@ es6 뿐 아니라 브라우저에 따라 알아서 컴파일 해줌
 babel-loader: 자바스크립트 파일을 babel preset/plugin과 webpack을 사용하여 es5로 컴파일 해주는 plugin
 jsx -> javascript 로 컴파일
 html webpack plugin"# udemy-react-typescript" 
+"# udemy-react-typescript" 
