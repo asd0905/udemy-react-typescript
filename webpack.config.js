@@ -26,8 +26,8 @@ module.exports = {
     },
     target: ['web', 'es5'],
     devServer: {
-        contentBase: './',
-        publicPath: '/dist',
+        contentBase: './', // index.html 위치
+        publicPath: '/dist', // 빌드 결과물 위치
         port: 3000
     },
     optimization: {
