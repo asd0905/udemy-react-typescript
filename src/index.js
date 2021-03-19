@@ -5,7 +5,7 @@ import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar.jsx';
 import VideoList from './components/video_list.jsx';
 import VideoDetail from './components/video_detail.jsx';
-const API_KEY = 'AIzaSyAUhWgn34MFznJldo7tkEM0p1kGK7zLXgs';
+const API_KEY = 'AIzaSyCWXVxNuYApHwj8SmWG9s3AFLcQad_mKMw';
 
 // Create a new component. this component should produce
 // some HTML
@@ -48,12 +48,12 @@ class App extends Component {
 
     /**
      * @description 랜더링 될때, 넘겨주는 props의 값이 바뀔 때, setState 호출할 때 실행 됨
-     * @param {*} props 
+     * @param {*} props
      * @param {*} state 
      * @returns 
      */
     static getDerivedStateFromProps(props, state) {
-        console.log('getDerivedStateFromProps')
+        console.log('getDerivedStateFromProps----------')
         console.log('state', state);
         console.log('--------------------------------');
         return {};
@@ -66,26 +66,39 @@ class App extends Component {
      * @param {*} nextState 
      */
     shouldComponentUpdate(nextProps, nextState) {
-        console.log('shouldComponentUpdate');
+        console.log('shouldComponentUpdate----------');
         console.log('nextState', nextState);
         console.log('nowState', this.state);
         console.log('--------------------------------');
         return true;
     }
 
-    getSnapshotBefore(prevProps, prevState) {
-        console.log('getSnapshotBefore');
+    /**
+     * @description 이전 데이터와 현제 데이터를 비교해서 가상돔의 DOM정보와 리얼돔의 DOM정보를 가져와서 비교 가능. 스크롤바 위치 변경
+     * 하는거 아니면 잘 이용하는데가 없다고 합니다. 현재의 state갑과 변경되기 전의 state값을 비교해서
+     * @param prevProps
+     * @param prevState
+     * @returns {Readonly<S>}
+     */
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        console.log('getSnapshotBefore----------');
         console.log('prevState', prevState);
         console.log('--------------------------------');
         return prevState;
     }
 
+    /**
+     * @description 리랜더 된 이후에 실행하는 함수. DOM정보 변경할 때 사용 가능.
+     * getSnapshotBeforeUpdate에서 리턴해주는 데이터를 가져와서 사용
+     * @param prevProps
+     * @param prevState
+     * @param snapshot
+     */
     componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log('componentDidUpdate');
+        console.log('componentDidUpdate----------');
         console.log('prevState', prevState);
         console.log('snapshot', snapshot);
         console.log('--------------------------------');
-        return prevState;
     }
 
     test = () => {
